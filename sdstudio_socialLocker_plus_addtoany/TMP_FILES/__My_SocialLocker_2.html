@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+
+        <script
+          src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+    @import "https://use.fontawesome.com/releases/v5.0.10/css/all.css";
+#sociallocker {
+	background-color: #EEEEEE;
+	text-align: center;
+	position: relative;
+	max-width: 500px;
+	height: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	border-radius:10px;
+}
+#sociallocker-overlay {
+	background-color: rgba(0,0,0,0.6);
+	font-size: 20px;
+	font-weight: bold;
+	color: #ffffff;
+	transition: all 0.2s ease;
+}
+#sociallocker-overlay i {
+	margin-right: 10px;
+}
+#sociallocker:hover #sociallocker-overlay {
+	top: -100%;
+	transition: all 0.2s linear;
+}
+#sociallocker:hover #sociallocker-content {
+	top: 100%;
+	transition: all 0.2s linear;
+}
+#sociallocker-content a {
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 20px;
+	background-color: #777777;
+	color: #f9f9f9;
+	border-radius: 4px;
+	font-weight: bold;
+}
+#sociallocker-overlay,
+#sociallocker-content,
+#sociallocker-links {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+}
+#sociallocker-content {
+	background-color: #ccc;
+	transition: all 0.2s ease;
+}
+.social-1 {
+	text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+	margin-right: 5px;
+}
+.social-1 i {
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+    height: 100%;
+}
+.social-1:hover i {
+	background-color: rgba(0,0,0,0.1);
+    transform: scale(1.2);
+    transition: all 0.2s;
+}
+.fb { background-color: #4561A8; }
+.tw { background-color: #17ADEA; }
+.gp { background-color: #BF3B28; }
+.in { background-color: #1679B1; }
+.pi { background-color: #D9303C; }
+.su { background-color: #E84930; }
+    </style>
+
+<script>
+jQuery(document).ready(function($) {
+    (function () {
+        var sl = document.querySelector("#sociallocker");
+        var slc = document.querySelector("#sociallocker-content");
+        if (!sl) return;
+        var old_slc_html = slc.innerHTML;
+        slc.innerHTML = slc.innerHTML.replace(/(href=")(.*)(\")/g, "href=\"#\"");
+        sl.querySelectorAll("#sociallocker-links a").forEach(function (ele) {
+            ele.onclick = function (e) {
+                //var web_window = window.open(this.href, 'Share Link', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600,top=' + (screen.height / 2 - 300) + ',left=' + (screen.width / 2 - 300));
+                var web_window = window.open(this.href);
+                var check_window_close = setInterval(function () {
+                    if (web_window.closed) {
+                        clearInterval(check_window_close);
+                        slc.innerHTML = old_slc_html;
+                        document.querySelector("#sociallocker-links").style.display = "none";
+                        document.querySelector("#sociallocker-overlay").style.display = "none";
+                        document.querySelector("#sociallocker-content").style.top = "0";
+                    }
+                }, 1000);
+                e.preventDefault();
+            };
+        });
+    })();
+});	
+</script>
+
+</head>
+<body>
+    <a href="https://codeshack.io/create-your-own-content-locker-html-javascript/">https://codeshack.io/create-your-own-content-locker-html-javascript/</a>
+
+    <img src="https://codeshack.io/web/img/posts/create-your-own-content-locker-html-javascript.png" alt="">
+
+    I've been visiting quite a few blogs recently and what I've seen on some of them is a content locker, for example, to
+    unlock a download button you need to share or like the post.
+    
+    It's actually quite a good idea if you want your website to become more visible, the more shares and likes your pages
+    have the more visitors you will probably get.
+    
+    I've done more research on these content lockers and it appears most of them are either paid plugins or very basic.
+    
+    So I've decided to write my own version, it doesn't require a lot of code and you can customize it to how you want,
+    although you will need some experience with HTML.
+
+    <div id="sociallocker">
+        <div id="sociallocker-links">
+		<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+<a class="a2a_button_pinterest"></a>
+<a class="a2a_button_linkedin"></a>
+<a class="a2a_button_trello"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+            <!-- <a href="#" class="social-1 fb"><i class="fab fa-facebook-f"></i></a> -->
+            <!-- <a href="#" class="social-1 tw"><i class="fab fa-twitter"></i></a> -->
+            <!-- <a href="#" class="social-1 gp"><i class="fab fa-google-plus-g"></i></a> -->
+            <!-- <a href="#" class="social-1 in"><i class="fab fa-linkedin-in"></i></a> -->
+            <!-- <a href="#" class="social-1 pi"><i class="fab fa-pinterest-p"></i></a> -->
+            <!-- <a href="#" class="social-1 su"><i class="fab fa-stumbleupon"></i></a> -->
+        </div>
+        <div id="sociallocker-content">
+            <a href="http://google.com">Download Now</a>
+        </div>
+        <div id="sociallocker-overlay"><i class="fas fa-lock"></i>Unlock content with a social share.</div>
+    </div>
+</body>
+</html>

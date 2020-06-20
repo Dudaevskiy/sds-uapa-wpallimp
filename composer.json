@@ -1,0 +1,30 @@
+{
+"require": {
+    "composer/installers": "*",
+    "reduxframework/redux-framework-4" : "^4.0",
+        "cebe/markdown": "^1.2",
+        "xemlock/htmlpurifier-html5": "^0.1.11"
+},
+"repositories": [
+    {
+        "type": "package",
+        "package": {
+            "name": "reduxframework/redux-framework-4",
+            "type": "wordpress-plugin",
+            "version": "4.0.1",
+            "dist": {
+                "type": "zip",
+                 "url": "https://github.com/reduxframework/redux-framework-4/archive/master.zip"
+            },
+            "require" : {
+                "composer/installers": "*"
+            },
+			"extra": {
+				"installer-paths": {
+					"vendor/{$name}/": ["type:wordpress-plugin"]
+				}
+			}
+        }
+    }
+]
+}

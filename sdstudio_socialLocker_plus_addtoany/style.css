@@ -1,0 +1,155 @@
+.sociallocker {
+    background-color: #EEEEEE;
+    text-align: center;
+    position: relative;
+    max-width: 500px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.sociallocker-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.sociallocker-overlay i {
+    margin-right: 10px;
+	margin-left: 25px;
+}
+
+.sociallocker:hover .sociallocker-overlay {
+    top: -100%;
+    transition: all 0.2s linear;
+}
+
+.sociallocker:hover .sociallocker-content {
+    top: 100%;
+    transition: all 0.2s linear;
+}
+
+.sociallocker-content a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #777777;
+    color: #f9f9f9;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.sociallocker-overlay,
+.sociallocker-content,
+.sociallocker-links {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+
+.sociallocker-content {
+    background-color: #ccc;
+    transition: all 0.2s ease;
+}
+
+.social-1 {
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    margin-right: 5px;
+}
+
+.social-1 i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.social-1:hover i {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.2);
+    transition: all 0.2s;
+}
+
+.fb {
+    background-color: #4561A8;
+}
+
+.tw {
+    background-color: #17ADEA;
+}
+
+.gp {
+    background-color: #BF3B28;
+}
+
+.in {
+    background-color: #1679B1;
+}
+
+.pi {
+    background-color: #D9303C;
+}
+
+.su {
+    background-color: #E84930;
+}
+
+div# a2apage_thanks_kit {
+    min - height: 50 px;
+}
+
+@media screen and (max-width: 560px) {
+    .sociallocker-overlay {
+        font-size: 15px;
+    }
+}
+
+/* Высота кнопок AddToAny */
+.a2a_kit a {
+    min-height: 45px !important;
+}
+
+div.sociallocker-content a {
+    color: white !important;
+    border: white 2px solid;
+    background-color: #777777;
+}
+
+div.sociallocker-content a:hover {
+    color: #002467 !important;
+    border: #002467 2px solid;
+    background-color: #ffffff;
+}
+
+/*.sociallocker:after{*/
+/*    background-image: url();*/
+/*    content: "\f087";*/
+/*    font-family: FontAwesome;*/
+/*    font-style: normal;*/
+/*    font-weight: normal;*/
+/*    text-decoration: inherit;*/
+/*    position: absolute;*/
+/*    font-size: 100px;*/
+/*    color: lightblue;*/
+/*    top: 200%;*/
+/*    left: 50%;*/
+/*    margin: -260px 0 0 -200px;*/
+/*    z-index: 1;*/
+/*}*/

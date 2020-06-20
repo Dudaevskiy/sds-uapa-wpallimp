@@ -1,0 +1,14 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+pre#sdstudio_ajax_logging {
+    /*height: 400px;*/
+    overflow-y: auto;
+    max-height: 450px;
+}
+
+/* Скрываем опцию с удалением первого изображения - первый вариант*/
+[for="redux_sds_uapa_wpallimp_opt_multi_checkbox_update_all_posts_1_0"] {
+    display: none !important;
+}
